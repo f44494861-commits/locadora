@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f6f3;
+  --foreground: #1c2a1f;
+  --card: #ffffff;
+  --card-foreground: #1c2a1f;
+  --primary: #1f6b4a;
+  --primary-foreground: #f5fff8;
+  --secondary: #e7efe9;
+  --secondary-foreground: #1c2a1f;
+  --muted: #e8eee9;
+  --muted-foreground: #5b6b5f;
+  --accent: #e2efe7;
+  --accent-foreground: #1c2a1f;
+  --destructive: #b42318;
+  --border: #d5ded7;
+  --input: #d5ded7;
+  --ring: #1f6b4a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}

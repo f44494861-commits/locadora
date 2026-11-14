@@ -1,0 +1,93 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isActiveUser() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && userDoc().ativo == true;
+    }
+
+    function isAdmin() {
+      return isActiveUser()
+        && (request.auth.token.perfil == 'ADMIN' || userDoc().perfil == 'ADMIN');
+    }
+
+    // Negar tudo por padrão; escrita sensível só via Admin SDK (servidor).
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    match /users/{userId} {
+      allow read: if isActiveUser() && (request.auth.uid == userId || isAdmin());
+      allow write: if false;
+    }
+
+    match /clientes/{id} {
+      allow read: if isActiveUser();
+      allow write: if false;
+    }
+
+    match /cpfCnpjIndex/{id} {
+      allow read: if isActiveUser();
+      allow write: if false;
+    }
+
+    match /categorias/{id} {
+      allow read: if isActiveUser();
+      allow write: if false;
+    }
+
+    match /equipamentos/{id} {
+      allow read: if isActiveUser();
+      allow write: if false;
+    }
+
+    match /unidades/{id} {
+      allow read: if isActiveUser();
+      allow write: if false;
+    }
+
+    match /estoqueLotes/{id} {
+      allow read: if isActiveUser();
+      allow write: if false;
+    }
+
+    match /movimentosEstoque/{id} {
+      allow read: if isActiveUser();
+      allow write: if false;
+    }
+
+    match /locacoes/{id} {
+      allow read: if isActiveUser();
+      allow write: if false;
+    }
+
+    match /ocupacoes/{id} {
+      allow read: if isActiveUser();
+      allow write: if false;
+    }
+
+    match /lancamentos/{id} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    match /contadores/{id} {
+      allow read: if isActiveUser();
+      allow write: if false;
+    }
+
+    match /resumos/{id} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+  }
+}

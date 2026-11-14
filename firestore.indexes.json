@@ -1,0 +1,102 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "ocupacoes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "equipamentoId", "order": "ASCENDING" },
+        { "fieldPath": "fim", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "ocupacoes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "unidadeId", "order": "ASCENDING" },
+        { "fieldPath": "fim", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "ocupacoes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "equipamentoId", "order": "ASCENDING" },
+        { "fieldPath": "condicao", "order": "ASCENDING" },
+        { "fieldPath": "fim", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "clientes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "ativo", "order": "ASCENDING" },
+        { "fieldPath": "nomeBusca", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "locacoes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "retiradaPrevista", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "locacoes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "devolucaoPrevista", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "locacoes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "clienteId", "order": "ASCENDING" },
+        { "fieldPath": "createdAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "lancamentos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "dataVencimento", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "lancamentos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "tipo", "order": "ASCENDING" },
+        { "fieldPath": "dataVencimento", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "lancamentos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "clienteId", "order": "ASCENDING" },
+        { "fieldPath": "dataVencimento", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "unidades",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "equipamentoId", "order": "ASCENDING" },
+        { "fieldPath": "status", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "movimentosEstoque",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "equipamentoId", "order": "ASCENDING" },
+        { "fieldPath": "data", "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
